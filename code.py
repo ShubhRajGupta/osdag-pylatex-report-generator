@@ -1,20 +1,3 @@
-"""
-Beam Analysis Report Generator
-==============================
-This script generates a professional PDF engineering report for analyzing 
-a simply supported beam using data from an Excel file.
-
-Features:
-- Title page and table of contents
-- Introduction with embedded beam image
-- Input data table (LaTeX tabular with selectable text)
-- Shear Force Diagram (SFD) using TikZ/pgfplots
-- Bending Moment Diagram (BMD) using TikZ/pgfplots
-
-Author: Generated for FOSSEE Project
-Date: February 2026
-"""
-
 import os
 import pandas as pd
 from datetime import datetime
@@ -24,11 +7,6 @@ class BeamReportGenerator:
     """
     A class to generate professional PDF engineering reports for beam analysis.
     
-    Attributes:
-        excel_path (str): Path to the Excel file containing force data
-        beam_image_path (str): Path to the beam diagram image
-        output_name (str): Name for the output PDF file (without extension)
-        data (DataFrame): Pandas DataFrame containing the force data
     """
     
     def __init__(self, excel_path: str, beam_image_path: str, output_name: str = "Beam_Analysis_Report"):
@@ -49,9 +27,7 @@ class BeamReportGenerator:
     def load_data(self) -> None:
         """
         Load and process data from the Excel file.
-        
-        Reads the Excel file containing x positions, shear forces, 
-        and bending moments. Calculates the beam length from the data.
+
         """
         print("[INFO] Loading data from Excel file...")
         self.data = pd.read_excel(self.excel_path)
